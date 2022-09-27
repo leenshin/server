@@ -1,4 +1,4 @@
-package gwshin.dlink.payload.request;
+package gwshin.dlink.web.request;
 
 import lombok.Getter;
 import lombok.Setter;

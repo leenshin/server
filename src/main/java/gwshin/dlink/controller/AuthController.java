@@ -1,7 +1,7 @@
 package gwshin.dlink.controller;
 
-import gwshin.dlink.payload.request.LoginRequest;
-import gwshin.dlink.payload.response.JwtResponse;
+import gwshin.dlink.web.request.LoginRequest;
+import gwshin.dlink.web.response.JwtResponse;
 import gwshin.dlink.security.jwt.JwtUtils;
 import gwshin.dlink.security.services.AdminUserDetailsImpl;
 import lombok.RequiredArgsConstructor;
@@ -26,7 +26,7 @@ public class AuthController {
     private final AuthenticationManager authenticationManager;
     private final JwtUtils jwtUtils;
 
-    @PostMapping("/signin")
+    @PostMapping("/login")
     public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
 
         Authentication authentication = authenticationManager.authenticate(
