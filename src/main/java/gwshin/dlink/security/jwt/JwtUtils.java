@@ -31,13 +31,12 @@ public class JwtUtils {
     }
 
     public String getUserIdFromJwtToken(String token) {
-        return Jwts.parser().setSigningKey(jwtSecret).parseClaimsJwt(token).getBody().getSubject();
+        return Jwts.parser().setSigningKey(jwtSecret).parseClaimsJws(token).getBody().getSubject();
     }
 
     public boolean validateJwtToken(String authToken) {
         try {
-            System.out.println("##### authToken=" + authToken);
-            Jwts.parser().setSigningKey(jwtSecret).parseClaimsJwt(authToken);
+            Jwts.parser().setSigningKey(jwtSecret).parseClaimsJws(authToken);
             return true;
         } catch (SignatureException e) {
             log.error("Invalid Jwt signature: {}", e.getMessage());
@@ -49,8 +48,11 @@ public class JwtUtils {
             log.error("Invalid Jwt is unsupported: {}", e.getMessage());
         } catch (IllegalArgumentException e) {
             log.error("Jwt claims string is empty: {}", e.getMessage());
+        } catch (NullPointerException e) {
+            log.error("Cannot set user authentication: {}", e.getMessage());
         }
 
         return false;
     }
+
 }

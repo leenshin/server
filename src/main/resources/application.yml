@@ -44,4 +44,8 @@ mybatis:
 gwshin:
   app:
     jwtSecret: gwshinSecretKey
+    jwtCookieName: gwshin-jwt
+    jwtRefreshCookieName: gwshin-jwt-refresh
+
     jwtExpirationMs: 86400000
+    jwtRefreshExpirationMs: 86400000
