@@ -1,0 +1,47 @@
+# Server Port
+server:
+  port: 9000
+  servlet:
+    context-path: /
+
+# Spring
+spring:
+  devtools:
+    add-properties: false
+  
+  # Disable Security Login
+  autoconfigure:
+    exclude:
+    - org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration
+  
+  # Oracle Datasource
+  datasource:
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@localhost:1521/orcl
+    username: ncm
+    password: ncm
+
+  # View
+  mvc:
+    view:
+      prefix: /static/test/
+
+# MyBatis
+mybatis:
+
+  #Model Location
+  type-aliases-package: gwshin.dlink.domain.adminUser
+
+  #Xml Location
+  mapper-locations:
+  - classpath:mappers/*.xml
+
+  #Camel case - Underscore
+  configuration:
+    map-underscore-to-camel-case:  true
+
+# Jwt
+gwshin:
+  app:
+    jwtSecret: gwshinSecretKey
+    jwtExpirationMs: 86400000

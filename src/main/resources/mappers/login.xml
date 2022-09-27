@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTO Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="gwshin.dlink.mapper.adminUser.AdminUserMapper">
+    <!-- 
+    <select id="selectList" parameterType="gwshin.dlink.model.Dept" resultType="gwshin.dlink.model.Dept">
+     -->
+    <select id="findByUserId" resultType="gwshin.dlink.domain.adminUser.AdminUser">
+        SELECT A.USER_ID
+              ,A.PASS
+              ,A.EMAIL
+              ,B.ROLE_ID AS ROLES
+          FROM NCM.ADMIN_USER A,
+               NCM.ADMIN_USER_ROLE B
+         WHERE 1=1
+           AND A.USER_ID = #{USER_ID}
+           AND B.USER_ID = A.USER_ID
+    </select>
+</mapper>
