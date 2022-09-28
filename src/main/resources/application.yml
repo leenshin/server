@@ -24,7 +24,7 @@ spring:
   # View
   mvc:
     view:
-      prefix: /static/test/
+      prefix: /static/
 
 # MyBatis
 mybatis:
