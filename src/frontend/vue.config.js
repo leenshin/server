@@ -5,10 +5,10 @@ module.exports = defineConfig({
 
   devServer: {
     proxy: {
-      "/": {
+      "/api": {
         target: "http://localhost:9000", // server port
-        changeOrigin: true,
-        ws: true,
+        // changeOrigin: true,
+        // ws: true,
       }
     },
     port: 8080, // client port
