@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Navigate } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
@@ -70,7 +70,7 @@ class Login extends Component {
 
     onChangePassword(e) {
         this.setState({
-            userId: e.target.value,
+            password: e.target.value,
         });
     }
 
@@ -78,17 +78,17 @@ class Login extends Component {
         const { isLoggedIn, message } = this.props;
 
         if (isLoggedIn) {
-            return <Navigate to="/profile" />;
+            return <Redirect to="/profile" />;
         }
 
         return (
             <div className="col-md-12">
                 <div className="card card-container">
-                    <img
+                    {/* <img
                         src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
                         alt="profile-img"
                         className="profile-img-card"
-                    />
+                    /> */}
 
                     <Form
                         onSubmit={this.handleLogin}
@@ -103,7 +103,7 @@ class Login extends Component {
                                 className="form-control"
                                 name="userId"
                                 value={this.state.userId}
-                                onChange={this.onChangeuserId}
+                                onChange={this.onChangeUserId}
                                 validations={[required]}
                             />
                         </div>

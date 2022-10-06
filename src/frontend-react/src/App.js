@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Router, Routes, Route, Link } from "react-router-dom";
+import { Router, Switch, Route, Link } from "react-router-dom";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
@@ -105,13 +105,13 @@ class App extends Component {
           </nav>
 
           <div className="container mt-3">
-            <Routes>
+            <Switch>
               <Route exact path={["/", "/home"]} component={Home} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/profile" component={Profile} />
               <Route path="/user" component={BoardUser} />
               <Route path="/admin" component={BoardAdmin} />
-            </Routes>
+            </Switch>
           </div>
         </div>
       </Router>
