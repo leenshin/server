@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Redirect } from 'react-router-dom';
 
+// React Form Validation
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
@@ -40,6 +41,7 @@ class Login extends Component {
             loading: true,
         });
 
+        // validation 함수 체크
         this.form.validateAll();
 
         const { dispatch, history } = this.props;
@@ -152,6 +154,8 @@ class Login extends Component {
     }
 }
 
+// isLoggedIn 체크 후 Profile 페이지로 redirect
+// message로 response 메시지 출력
 function mapStateToProps(state) {
     const { isLoggedIn } = state.auth;
     const { message } = state.message;
@@ -161,4 +165,5 @@ function mapStateToProps(state) {
     };
 }
 
+// app의 state 관리
 export default connect(mapStateToProps)(Login);

@@ -1,3 +1,4 @@
+// Local Storage에서 가져온 유저 정보 출력
 import React, { Component } from "react";
 import { Redirect } from 'react-router-dom';
 import { connect } from "react-redux";
