@@ -8,6 +8,7 @@ class UserService {
         return axios.get(API_URL + 'all');
     }
 
+    // 권한 정보가 필요한 request에만 Authorization 정보를 불러온다.
     getUserBoard() {
         return axios.get(API_URL + 'user', { headers: authHeader() });
     }

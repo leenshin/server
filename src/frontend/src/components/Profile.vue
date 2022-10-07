@@ -1,3 +1,7 @@
+<!-- 
+  Vuex Store에서 가져온 현재 유저 정보 출력.
+  로그인한 유저가 없을 경우, Login Page로 이동
+ -->
 <template>
   <div class="container">
     <header class="jumbotron">

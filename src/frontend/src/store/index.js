@@ -1,3 +1,4 @@
+// main Vuex Store
 import { createStore } from "vuex";
 import { auth } from "./auth.module";
 

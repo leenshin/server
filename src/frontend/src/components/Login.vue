@@ -1,3 +1,9 @@
+<!-- 
+ Vuex Store를 사용하여 직접적으로 axios나 AuthService를 사용하지 않는다.
+ - this.$store.state.auth: status 가져옴
+ - this.$store.dispatch(): action을 dispatch하여 request 생성
+ -->
+
 <template>
   <div class="col-md-12">
     <div class="card card-container">
@@ -39,7 +45,8 @@
 </template>
 
 <script>
-import { Form, Field, ErrorMessage } from "vee-validate";
+// Validation 검증을 위해 VeeValidate 사용
+import { Form, Field, ErrorMessage } from "vee-validate"; 
 import * as yup from "yup";
 
 export default {
@@ -61,6 +68,8 @@ export default {
       schema,
     };
   },
+
+  // 로그인 성공 시 Profile 페이지로 이동
   computed: {
     loggedIn() {
       return this.$store.state.auth.status.loggedIn;
@@ -71,7 +80,9 @@ export default {
       this.$router.push("/profile");
     }
   },
+
   methods: {
+    // "auth/login" 액션을 Vuex Store로 dispatch
     handleLogin(user) {
       this.loading = true;
 

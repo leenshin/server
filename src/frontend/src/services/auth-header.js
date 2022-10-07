@@ -1,3 +1,4 @@
+// Authorization Header 생성
 export default function authHeader() {
     let user = JSON.parse(localStorage.getItem('user'));
 

@@ -7,6 +7,11 @@ const initialState = user
 
 export const auth = {
     namespaced: true,
+
+    // state: { status, user }
+    // actions: { login, logout }
+    // mutations: { loginSuccess, loginFailure, logout }
+
     state: initialState,
     actions: {
         login({ commit }, user) {

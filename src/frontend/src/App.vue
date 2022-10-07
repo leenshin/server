@@ -1,3 +1,6 @@
+<!-- 
+  root container
+ -->
 <template>
   <div id="app">
     <nav class="navbar navbar-expand navbar-dark bg-dark">
@@ -5,7 +8,7 @@
       <div class="navbar-nav mr-auto">
         <li class="nav-item">
           <router-link to="/home" class="nav-link">
-            <font-awesome-icon icon="home" /> Home
+            Home
           </router-link>
         </li>
         <li v-if="showAdminBoard" class="nav-item">
@@ -21,7 +24,7 @@
       <div v-if="!currentUser" class="navbar-nav ml-auto">
         <li class="nav-item">
           <router-link to="/login" class="nav-link">
-            <font-awesome-icon icon="sign-in-alt" /> Login
+            Login
           </router-link>
         </li>
       </div>
@@ -29,13 +32,12 @@
       <div v-if="currentUser" class="navbar-nav ml-auto">
         <li class="nav-item">
           <router-link to="/profile" class="nav-link">
-            <font-awesome-icon icon="user" />
             {{ currentUser.userId }}
           </router-link>
         </li>
         <li class="nav-item">
           <a class="nav-link" @click.prevent="logOut">
-            <font-awesome-icon icon="sign-out-alt" /> LogOut
+            LogOut
           </a>
         </li>
       </div>
